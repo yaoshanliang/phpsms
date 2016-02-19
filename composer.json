@@ -1,0 +1,25 @@
+{
+    "name": "yaoshanliang/phpsms",
+    "description": "sms for php",
+    "keywords": ["php", "sms"],
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "iat",
+            "email": "i@iat.net.cn",
+            "homepage": "http://iat.net.cn",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "toplan/laravel-sms": "~2.2.6",
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+}
