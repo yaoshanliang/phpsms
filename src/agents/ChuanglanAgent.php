@@ -23,7 +23,7 @@ class ChuanglanAgent extends Agent {
         $params = array (
             'account' => $this->apiAccount,
             'pswd' => $this->apiPassword,
-            'msg' => '您好，您的验证码是：' . $content,
+            'msg' => $content,
             'mobile' => $to,
             'needstatus' => true,
             'product' => '',
@@ -34,7 +34,7 @@ class ChuanglanAgent extends Agent {
         //可用方法:
         // Agent::sockPost($url, $query);//fsockopen
         $result = Agent::curl($url, (array)$params, (bool)$isPost);//curl
-        $result=preg_split("/[,\r\n]/", $result['response']);
+        $result = preg_split("/[,\r\n]/", $result['response']);
 
         //切记更新发送结果
         if (0 == $result[1]) {
