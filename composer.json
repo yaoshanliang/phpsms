@@ -20,8 +20,8 @@
     "autoload": {
         "psr-4": {
             "Yaoshanliang\\PhpSms\\": [
-                "src/agents/",
+                "src/agents/"
             ]
-        },
+        }
     }
 }
