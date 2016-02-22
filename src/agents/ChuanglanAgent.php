@@ -29,12 +29,10 @@ class ChuanglanAgent extends Agent {
             'product' => '',
             'extno' => ''
         );
-        $isPost = true;
 
         //可用方法:
-        // Agent::sockPost($url, $query);//fsockopen
-        $result = Agent::curl($url, (array)$params, (bool)$isPost);//curl
-        $result = preg_split("/[,\r\n]/", $result['response']);
+        $result = $this->curlPost($url, $params);
+        $result = preg_split("/[,\r\n]/", $result);
 
         //切记更新发送结果
         if (0 == $result[1]) {
@@ -58,5 +56,19 @@ class ChuanglanAgent extends Agent {
     public function voiceVerify($to, $code)
     {
         //同上...
+    }
+
+    private function curlPost($url,$postFields)
+    {
+        $postFields = http_build_query($postFields);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        return $result;
     }
 }
