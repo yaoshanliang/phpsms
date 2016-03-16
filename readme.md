@@ -5,7 +5,7 @@
 # 安装
 
 ```php
-composer require 'yaoshanliang/phpsms:dev-master'
+composer require yaoshanliang/phpsms
 ```
 
 # 快速上手
