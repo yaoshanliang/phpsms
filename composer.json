@@ -21,6 +21,9 @@
         "psr-4": {
             "Yaoshanliang\\PhpSms\\": [
                 "src/agents/"
+            ],
+            "Toplan\\PhpSms\\Facades\\": [
+                "src/phpsms/facades/"
             ]
         }
     }
