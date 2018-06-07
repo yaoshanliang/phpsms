@@ -10,7 +10,7 @@ composer require yaoshanliang/phpsms
 
 # 快速上手
 
-###1. 配置
+### 1. 配置
 
 - 配置代理器所需参数
 
@@ -48,7 +48,7 @@ Sms::enable([
 ]);
 ```
 
-###2. 在laravel中使用
+### 2. 在laravel中使用
 
 如果你只想单纯的在laravel中使用phpsms的功能可以按如下步骤操作，
 当然也为你准备了基于phpsms开发的[laravel-sms](https://github.com/toplan/laravel-sms)
@@ -83,7 +83,7 @@ php artisan vendor:publish
 PhpSms::make()->to($to)->content($content)->send();
 ```
 
-###3. 详细使用见
+### 3. 详细使用见
 * [laravel-sms](https://github.com/toplan/laravel-sms)
 * [phpsms](https://github.com/toplan/phpsms)
 
